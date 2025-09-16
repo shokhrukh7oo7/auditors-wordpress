@@ -1,0 +1,411 @@
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 10px;
+  }
+  .banner-wrapper {
+    height: 655px;
+    position: relative;
+  }
+  /* membership */
+  .enter-one-wrapper .card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .enter-one-wrapper .card-wrapper .card-item {
+    width: 100%;
+  }
+  .enter-three-wrapper .enter-three-left-right-wrapper {
+    flex-direction: column;
+  }
+  .enter-three-wrapper .enter-three-left-right-wrapper .enter-three-left,
+  .enter-three-wrapper .enter-three-left-right-wrapper .enter-three-right {
+    width: 100%;
+    text-align: center;
+  }
+  /* membership */
+  /* become a member */
+  .become-a-member-banner {
+    height: 655px;
+  }
+  /* become a member */
+}
+
+@media (max-width: 992px) {
+  .burger {
+    display: flex;
+  }
+
+  nav {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    /* height: 100%; */
+    background: #fff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+    transform: translateX(-100vw);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+    max-height: calc(
+      100dvh - 80px
+    ); /* 80px — высота хедера, подстрой при необходимости */
+    overflow: auto;
+    border-radius: 16px;
+  }
+
+  nav.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .navbar-menu-list {
+    flex-direction: column;
+    padding: 20px 20px 10px;
+    gap: 15px;
+  }
+
+  .navbar-menu-item a {
+    font-size: 18px;
+    display: block;
+  }
+  .header-wrapper .show-btn {
+    display: flex;
+    margin: 0 auto 10px;
+  }
+
+  /* main */
+  .banner-wrapper {
+    height: 655px;
+    position: relative;
+  }
+  .banner-wrapper .banner-content {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-collegue-wrapper .about-collegue {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .about-collegue-wrapper {
+    top: -80px;
+  }
+  /* facts */
+  .facts-section .facts-wrapper h3 {
+    text-align: center;
+  }
+  .facts-section .facts-wrapper .fact-item-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    row-gap: 40px;
+  }
+  .facts-section .facts-wrapper .fact-item-wrapper .fact-item {
+    justify-content: center;
+    align-items: center;
+  }
+  /* about-collegue-page */
+  .about-collegue-header {
+    text-align: center;
+  }
+  .about-collegue-header h1,
+  .about-collegue-header p {
+    max-width: 992px;
+  }
+  .banner-description {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .about-collegue-card {
+    align-items: center;
+    text-align: center;
+  }
+  .about-collegue-card img {
+    width: 65px;
+    height: 65px;
+  }
+  .about-collegue-bg-wrapper .banner-description .download-wrapper {
+    justify-content: center;
+    align-items: center;
+  }
+  /* about-collegue-page */
+
+  /* membership */
+  .enter-left-right-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .enter-left-right-wrapper .enter-left,
+  .enter-left-right-wrapper .enter-right {
+    width: 100%;
+  }
+  .enter-info-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .enter-one-wrapper .card-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .enter-two-wrapper .enter-two-left-right-wrapper .enter-two-left-wrapper,
+  .enter-two-wrapper .enter-two-left-right-wrapper .enter-two-right-wrapper {
+    width: 100%;
+  }
+  .enter-one-wrapper h1 {
+    text-align: center;
+  }
+  .enter-one-wrapper p,
+  .enter-one-wrapper .card-wrapper .card-item .card-item-content,
+  .enter-one-wrapper .card-wrapper .card-item span {
+    text-align: center;
+  }
+  .enter-two-wrapper h1 {
+    max-width: 992px;
+    text-align: center;
+  }
+  .enter-two-wrapper .enter-two-left-right-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  /* table */
+  .enter-four-wrapper .enter-four-header {
+    text-align: center;
+  }
+  .enter-four-wrapper .enter-four-header h1 {
+    max-width: 992px;
+  }
+  .table_component table {
+    border: none;
+  }
+  .table_component table,
+  .table_component thead,
+  .table_component tbody,
+  .table_component th,
+  .table_component td,
+  .table_component tr {
+    display: block;
+    width: 100%;
+  }
+
+  .table_component thead {
+    display: none; /* скрываем заголовки */
+  }
+
+  .table_component tr {
+    margin-bottom: 15px;
+    border: 1px solid #dededf;
+    border-radius: 8px;
+    /* padding: 10px; */
+    background: #f9f9f9;
+  }
+
+  .table_component td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .table_component td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #1f3483;
+  }
+
+  .table_component td:last-child {
+    border-bottom: none;
+  }
+  /* table */
+  /* membership */
+  /* BECOME A MEMBER */
+  .become-a-member-banner h1,
+  .become-a-member-banner p {
+    text-align: center;
+  }
+  /* BECOME A MEMBER */
+
+  /* CONSULTATION START */
+  .consultation-wrapper .consultation-left-right-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  /* CONSULTATION END */
+
+  /* STANDARDS START */
+  .standards-content-wrapper,
+  .become-a-member-content-wrapper,
+  .seminar-wrapper .events-section .events-title-news-detail,
+  .news-detail-content-wrapper {
+    text-align: center;
+  }
+  .news-detail-content-wrapper .news-nav {
+    justify-content: center;
+  }
+  .seminar-wrapper .events-section .events-title-news-detail {
+    margin: 0 auto;
+  }
+  .become-a-member-accordion-wrapper h2 {
+    text-align: center;
+  }
+  /* STANDARDS END */
+
+  /* CONTACT START */
+  .contact-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .contact-wrapper .contact-content {
+    text-align: center;
+  }
+  .contact-wrapper .contact-content ul,
+  .contact-wrapper .contact-form,
+  .contact-wrapper .contact-form form .contact-btn-wrapper {
+    justify-content: center;
+    align-items: center;
+  }
+  /* CONTACT END */
+  /* tabs */
+  .tabs {
+    justify-content: center;
+  }
+  /* tabs */
+}
+
+@media (max-width: 768px) {
+  .banner-wrapper {
+    height: 555px;
+  }
+  /* membership */
+  .enter-one-wrapper .card-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* membership */
+  /* become a member */
+  .become-a-member-banner {
+    height: 555px;
+  }
+  /* become a member */
+
+  .team-modal-content .modal-content-team {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-modal-content img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 700px) {
+  .seminar-wrapper .events-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .news-wrapper .events-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .partner-section-wrapper .partner-wrapper .partner-header h3 {
+    text-align: center;
+  }
+  .about-collegue-bg-wrapper
+    .banner-description
+    .download-wrapper
+    .download-box {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-wrapper {
+    height: 500px;
+  }
+  .banner-wrapper .banner-content .banner-btn-wrapper {
+    flex-direction: column;
+  }
+  .request-modal form .form-wrapper .form-list {
+    flex-direction: column;
+  }
+  .footer-item .useful-links {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer-item {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .copyright {
+    text-align: center;
+  }
+  .footer-item .footer-social-wrapper ul {
+    justify-content: center;
+    align-items: center;
+  }
+  /* membership */
+  .enter-one-wrapper .card-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .enter-three-wrapper .enter-three-left-right-wrapper .enter-three-right {
+    flex-direction: column;
+  }
+  .enter-three-wrapper
+    .enter-three-left-right-wrapper
+    .enter-three-right
+    .enter-three-right-card-blue,
+  .enter-three-wrapper
+    .enter-three-left-right-wrapper
+    .enter-three-right
+    .enter-three-right-card-white {
+    width: 100%;
+  }
+  .table-accordion-wrapper {
+    flex-direction: column;
+  }
+  /* membership */
+  /* become a member */
+  .become-a-member-banner {
+    height: 500px;
+  }
+  /* become a member */
+
+  /* CONTACT START */
+  .contact-wrapper .contact-form form .form-item-wrapper {
+    flex-direction: column;
+  }
+  .contact-wrapper .contact-form form input {
+    padding: 9px 14px;
+  }
+  .contact-wrapper .contact-content ul li {
+    align-items: start;
+  }
+  .contact-wrapper .contact-content ul li:nth-child(2) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  /* CONTACT END */
+
+  /* tabs */
+  .tabs {
+    justify-content: center;
+  }
+  .team-modal-content img {
+    height: 150px;
+  }
+  /* tabs */
+}
