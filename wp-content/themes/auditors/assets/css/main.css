@@ -66,6 +66,10 @@ body {
   font-family: "Suisse", sans-serif;
 }
 
+.page {
+	margin: 0;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
