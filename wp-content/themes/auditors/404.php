@@ -8,7 +8,7 @@
  */
 
 get_header();
-?>
+?> 
 <main>
 	<section class="bg">
 		<div class="container">
