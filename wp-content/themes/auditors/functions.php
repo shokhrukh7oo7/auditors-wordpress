@@ -186,6 +186,14 @@ if (defined('JETPACK__VERSION')) {
 }
 
 // ------------------------------------------------------------------------
+function register_course_strings_for_polylang()
+{
+	if (function_exists('pll_register_string')) {
+		pll_register_string('partners', 'Наши партнеры', 'partners');
+	}
+}
+add_action('init', 'register_course_strings_for_polylang');
+// ------------------------------------------------------------------------
 // Разрешить загрузку SVG
 function allow_svg_upload($mimes)
 {
@@ -214,3 +222,12 @@ add_filter('wp_check_filetype_and_ext', 'fix_svg_mime_type', 10, 4);
 // }
 // add_filter('nav_menu_css_class', 'add_menu_list_class', 10, 3);
 // ------------------------------------------------------------------------
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
+		'page_title' => 'Партнеры',
+		'menu_title' => 'Партнеры',
+		'menu_slug' => 'partner-settings',
+		'capability' => 'edit_posts',
+		'redirect' => false,
+	));
+}

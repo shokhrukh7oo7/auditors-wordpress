@@ -309,7 +309,9 @@ get_header();
         </div>
     </section>
 
-    <section class="partner-section-wrapper">
+    <?php get_template_part('template-parts/sections/partner-section'); ?>
+
+    <!-- <section class="partner-section-wrapper">
         <div class="container">
             <div class="partner-wrapper">
                 <div class="partner-header">
@@ -342,7 +344,7 @@ get_header();
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </main>
 
 <?php
