@@ -7,7 +7,7 @@ get_header();
 
 <main>
     <section>
-        <div class="banner-wrapper" style="background-image: url('<?= the_field("banner_image"); ?>')">
+        <div class="banner-wrapper" style="background-image: url('<?= get_field("banner_image"); ?>')">
             <div class="container">
                 <div class="banner-content">
                     <h1><?= the_field("banner_header"); ?></h1>
@@ -27,17 +27,11 @@ get_header();
         <div class="about-collegue-wrapper">
             <div class="container">
                 <div class="about-collegue">
-                    <h3>Кратко о Коллеги</h3>
+                    <h3><?= the_field("header"); ?></h3>
                     <p>
-                        Коллегия аудиторов Казахстана – одна из двух крупнейших
-                        профессиональных организаций страны в сфере аудита, объединяющая
-                        более 90 аудиторских компаний и свыше 200 аттестованных
-                        аудиторов. Мы оказываем методическую поддержку членам, проводим
-                        обучающие мероприятия и защищаем интересы аудиторов во
-                        взаимодействии с государственными органами и международными
-                        структурами.
+                        <?= the_field("description"); ?>
                     </p>
-                    <a href="#" class="btn about-collegue-btn">Подробнее о нас</a>
+                    <a href="#" class="btn about-collegue-btn"><?= the_field("text_button"); ?></a>
                 </div>
             </div>
         </div>
@@ -47,41 +41,28 @@ get_header();
         <div class="facts-wrapper">
             <div class="container">
                 <div class="facts-content">
-                    <h3>Ключевые факты</h3>
+                    <h3><?= the_field("fact_header"); ?></h3>
                     <div class="fact-item-wrapper">
                         <div class="fact-item">
-                            <h5>Международное сотрудничество:</h5>
+                            <h5><?= the_field("fact_header_1"); ?></h5>
                             <p>
-                                Партнёрские связи с ключевыми организациями. Коллегия
-                                стремится к вступлению в Международную федерацию бухгалтеров
-                                (IFAC) и налаживает сотрудничество с глобальными
-                                профессиональными сообществами. Наш образовательный проект
-                                «Аудитор РК» уже получил 5-летнюю аккредитацию от ACCA –
-                                ведущей международной ассоциации бухгалтеров, что
-                                подтверждает соответствие нашим программ мировым стандартам.
+                                <?= the_field("fact_description_1"); ?>
                             </p>
-                            <a href="#" class="btn fact-btn">Календаь семинаров</a>
+                            <a href="#" class="btn fact-btn"><?= the_field("fact_button_1"); ?></a>
                         </div>
                         <div class="fact-item">
-                            <h5>Опыт работы:</h5>
+                            <h5><?= the_field("fact_header_2"); ?></h5>
                             <p>
-                                с 2007 года на страже качества аудита (более 15 лет
-                                деятельности). Коллегия была создана аудиторами в
-                                соответствии с Законом РК «Об аудиторской деятельности» и
-                                официально аккредитована Министерством финансов РК в 2007
-                                году
+                                <?= the_field("fact_description_2"); ?>
                             </p>
-                            <a href="#" class="btn fact-btn">Вступить в Коллегию</a>
+                            <a href="#" class="btn fact-btn"><?= the_field("fact_button_2"); ?></a>
                         </div>
                         <div class="fact-item">
-                            <h5>Масштаб сообщества:</h5>
+                            <h5><?= the_field("fact_header_3"); ?></h5>
                             <p>
-                                90+ аудиторских фирм и 200+ аудиторов уже состоят в
-                                Коллегии, что составляет практически половину всех
-                                сертифицированных аудиторов страны – сильный показатель
-                                доверия профессионального сообщества.
+                                <?= the_field("fact_description_3"); ?>
                             </p>
-                            <a href="#" class="btn fact-btn">Как стать аудитором</a>
+                            <a href="#" class="btn fact-btn"><?= the_field("fact_button_3"); ?></a>
                         </div>
                     </div>
                 </div>
@@ -323,40 +304,6 @@ get_header();
 
     <?php get_template_part('template-parts/sections/partners-section'); ?>
 
-    <!-- <section class="partner-section-wrapper">
-        <div class="container">
-            <div class="partner-wrapper">
-                <div class="partner-header">
-                    <h3>Наши партнеры</h3>
-                </div>
-
-                <div class="partner-logo-wrapper">
-                    <div class="row m-0">
-                        <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 my-2">
-                            <div class="partner-card-img">
-                                <img src="<?= get_template_directory_uri() . './assets/images/partners/apexbank.jpg' ?>" alt="image" />
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 my-2">
-                            <div class="partner-card-img">
-                                <img src="<?= get_template_directory_uri() . './assets/images/partners/AVO BANK.png' ?>" alt="image" />
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 my-2">
-                            <div class="partner-card-img">
-                                <img src="<?= get_template_directory_uri() . './assets/images/partners/biznes rivojlantirish banki.png' ?>" alt="image" />
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 my-2">
-                            <div class="partner-card-img">
-                                <img src="<?= get_template_directory_uri() . './assets/images/partners/HUdudgaz.png' ?>" alt="image" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 </main>
 
 <?php

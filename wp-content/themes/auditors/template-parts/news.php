@@ -34,7 +34,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +127,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -173,7 +173,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +196,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -220,7 +220,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +243,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -266,7 +266,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -289,7 +289,7 @@ get_header();
                                     <p class="card-description">
                                         Ежегодная конференция аудиторов 2025 для членов коллеги
                                     </p>
-                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Регистрация</a>
+                                    <a href="/assets/pages/news-detail.html" class="btn card-btn">Читать подробнее</a>
                                 </div>
                             </div>
                         </div>
