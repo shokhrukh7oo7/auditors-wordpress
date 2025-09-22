@@ -27,11 +27,23 @@
 		<div class="container">
 			<div class="header-wrapper">
 				<div class="logo-wrapper">
-					<a href="/index.html"><img src="<?= get_template_directory_uri() . '/assets/images/logo.svg'?>" alt="logo" /></a>
+					<a href="/index.html"><img src="<?= get_template_directory_uri() . '/assets/images/logo.svg' ?>"
+							alt="logo" /></a>
 					<p>Коллегия аудиторов</p>
 				</div>
 
-				<nav>
+				<nav class="navbar-menu-wrapper" id="nav-menu">
+					<?php
+					wp_nav_menu([
+						'theme_location' => 'header_menu',
+						'container' => false,
+						'menu_class' => 'navbar-menu-list',
+						'add_li_class' => 'navbar-menu-item',
+					])
+						?>
+				</nav>
+
+				<!-- <nav>
 					<div class="navbar-menu-wrapper" id="nav-menu">
 						<ul class="navbar-menu-list">
 							<li class="navbar-menu-item">
@@ -63,7 +75,7 @@
 							</li>
 						</ul>
 					</div>
-				</nav>
+				</nav> -->
 
 				<div class="langugage-container">
 					<div class="language-wrapper">

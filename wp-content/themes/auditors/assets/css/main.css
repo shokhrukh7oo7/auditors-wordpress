@@ -151,6 +151,9 @@ p {
 .header-wrapper .navbar-menu-wrapper .navbar-menu-list li a.active {
   font-weight: 500;
 }
+.header-wrapper .navbar-menu-wrapper .navbar-menu-list li.current-menu-item > a {
+  font-weight: 500;
+}
 
 .header-wrapper .langugage-container {
   display: flex;

@@ -50,7 +50,7 @@ function auditors_setup()
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__('Primary', 'auditors'),
+			'header_menu' => esc_html__('Меню в шапке', 'auditors'),
 		)
 	);
 
@@ -213,14 +213,22 @@ function fix_svg_mime_type($data, $file, $filename, $mimes)
 }
 add_filter('wp_check_filetype_and_ext', 'fix_svg_mime_type', 10, 4);
 // ------------------------------------------------------------------------
-// function add_menu_list_class($classes, $item, $args)
-// {
-// 	if ($args->theme_location === 'header-menu') {
-// 		$classes[] = 'navbar-menu-item';
-// 	}
-// 	return $classes;
-// }
-// add_filter('nav_menu_css_class', 'add_menu_list_class', 10, 3);
+function add_menu_list_class($classes, $item, $args)
+{
+	if ($args->theme_location === 'header_menu') {
+		$classes[] = 'navbar-menu-item';
+	}
+	return $classes;
+}
+add_filter('nav_menu_css_class', 'add_menu_list_class', 10, 3);
+// ------------------------------------------------------------------------
+function auditors_active_class($classes, $item) {
+    if (in_array('current-menu-item', $classes)) {
+        $classes[] = 'active'; // добавляем свой класс
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'auditors_active_class', 10, 2);
 // ------------------------------------------------------------------------
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
