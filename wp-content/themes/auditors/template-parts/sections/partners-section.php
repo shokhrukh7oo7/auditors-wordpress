@@ -2,7 +2,7 @@
     <div class="container">
         <div class="partner-wrapper">
             <div class="partner-header">
-                <h3><?php pll__('Наши партнеры'); ?></h3>
+                <h3><?= pll__('Наши партнеры'); ?></h3>
             </div>
 
             <div class="partner-logo-wrapper">

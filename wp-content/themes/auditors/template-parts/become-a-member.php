@@ -8,7 +8,7 @@ get_header();
 <main>
     <section class="bg">
         <div class="become-a-member-banner" style="
-            background-image: url('<?= get_template_directory_uri() . '/assets/images/banner/become-a-member.png'?>');
+            background-image: url('<?= get_template_directory_uri() . '/assets/images/banner/become-a-member.png' ?>');
           ">
             <div class="container">
                 <h1>Карьера аудитороа в Казахстане: с чего начать?</h1>

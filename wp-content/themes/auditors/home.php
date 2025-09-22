@@ -7,18 +7,16 @@ get_header();
 
 <main>
     <section>
-        <div class="banner-wrapper" style="background-image: url('<?= get_template_directory_uri() . '/assets/images/banner/banner.png'?>')">
+        <div class="banner-wrapper" style="background-image: url('<?= the_field("banner_image"); ?>')">
             <div class="container">
                 <div class="banner-content">
-                    <h1>Стабильность. Уверенность. Профессионализм.</h1>
+                    <h1><?= the_field("banner_header"); ?></h1>
                     <p>
-                        Коллегия аудиторов Казахстана помогает развитию аудиторского
-                        бизнеса, соблюдая высокие этические стандарты и укрепляя доверие
-                        к профессии
+                        <?= the_field("banner_description"); ?>
                     </p>
                     <div class="banner-btn-wrapper">
-                        <a href="#" class="left-btn">Вступить в Коллегию</a>
-                        <a href="#" class="right-btn">Узнать больше</a>
+                        <a href="#" class="left-btn"><?= the_field("banner_left_button"); ?></a>
+                        <a href="#" class="right-btn"><?= the_field("banner_right_button"); ?></a>
                     </div>
                 </div>
             </div>
@@ -98,7 +96,8 @@ get_header();
                     <h2 class="events-title">Ближайшие мероприятия:</h2>
                     <div class="calendar-wrapper">
                         <a href="#">
-                            <img src="<?= get_template_directory_uri() . './assets/images/calendar-dots.svg'?>" alt="image" />
+                            <img src="<?= get_template_directory_uri() . './assets/images/calendar-dots.svg' ?>"
+                                alt="image" />
                             Календарь семинаров
                         </a>
                     </div>
@@ -110,10 +109,11 @@ get_header();
                             <div class="card-wrapper">
                                 <div class="card-img">
                                     <p class="green-tag">Регистрация открыта</p>
-                                    <img src="<?= get_template_directory_uri() . './assets/images/seminar/seminar-1.png'?>" class="seminar-card-image"
-                                        alt="image" />
+                                    <img src="<?= get_template_directory_uri() . './assets/images/seminar/seminar-1.png' ?>"
+                                        class="seminar-card-image" alt="image" />
                                     <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg'?>" alt="image" class="arrow-icon" />
+                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
+                                            alt="image" class="arrow-icon" />
                                     </div>
                                 </div>
 
@@ -133,10 +133,11 @@ get_header();
                             <div class="card-wrapper">
                                 <div class="card-img">
                                     <p class="green-tag">Регистрация открыта</p>
-                                    <img src="<?= get_template_directory_uri() . './assets/images/seminar/seminar-2.png'?>" class="seminar-card-image"
-                                        alt="image" />
+                                    <img src="<?= get_template_directory_uri() . './assets/images/seminar/seminar-2.png' ?>"
+                                        class="seminar-card-image" alt="image" />
                                     <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg'?>" alt="image" class="arrow-icon" />
+                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
+                                            alt="image" class="arrow-icon" />
                                     </div>
                                 </div>
 
@@ -156,10 +157,11 @@ get_header();
                             <div class="card-wrapper">
                                 <div class="card-img">
                                     <p class="red-tag">Завершение подачи заявок</p>
-                                    <img src="<?= get_template_directory_uri() . './assets/images/seminar/seminar-3.png'?>" class="seminar-card-image"
-                                        alt="image" />
+                                    <img src="<?= get_template_directory_uri() . './assets/images/seminar/seminar-3.png' ?>"
+                                        class="seminar-card-image" alt="image" />
                                     <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg'?>" alt="image" class="arrow-icon" />
+                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
+                                            alt="image" class="arrow-icon" />
                                     </div>
                                 </div>
 
@@ -179,10 +181,11 @@ get_header();
                             <div class="card-wrapper">
                                 <div class="card-img">
                                     <p class="green-tag">Регистрация открыта</p>
-                                    <img src="<?= get_template_directory_uri() . './assets/images/seminar/seminar-1.png'?>" class="seminar-card-image"
-                                        alt="image" />
+                                    <img src="<?= get_template_directory_uri() . './assets/images/seminar/seminar-1.png' ?>"
+                                        class="seminar-card-image" alt="image" />
                                     <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg'?>" alt="image" class="arrow-icon" />
+                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
+                                            alt="image" class="arrow-icon" />
                                     </div>
                                 </div>
 
@@ -211,7 +214,8 @@ get_header();
                     <h2 class="events-title">Новости</h2>
                     <div class="calendar-wrapper">
                         <a href="#">
-                            <img src="<?= get_template_directory_uri() . './assets/images/newspaper.svg'?>" alt="image" />
+                            <img src="<?= get_template_directory_uri() . './assets/images/newspaper.svg' ?>"
+                                alt="image" />
                             Все новости
                         </a>
                     </div>
@@ -222,9 +226,11 @@ get_header();
                         <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 mb-4 px-2">
                             <div class="card-wrapper">
                                 <div class="card-img">
-                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-1.png'?>" class="seminar-card-image" alt="image" />
+                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-1.png' ?>"
+                                        class="seminar-card-image" alt="image" />
                                     <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg'?>" alt="image" class="arrow-icon" />
+                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
+                                            alt="image" class="arrow-icon" />
                                     </div>
                                 </div>
 
@@ -243,9 +249,11 @@ get_header();
                         <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 mb-4 px-2">
                             <div class="card-wrapper">
                                 <div class="card-img">
-                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-2.png'?>" class="seminar-card-image" alt="image" />
+                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-2.png' ?>"
+                                        class="seminar-card-image" alt="image" />
                                     <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg'?>" alt="image" class="arrow-icon" />
+                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
+                                            alt="image" class="arrow-icon" />
                                     </div>
                                 </div>
 
@@ -264,9 +272,11 @@ get_header();
                         <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 mb-4 px-2">
                             <div class="card-wrapper">
                                 <div class="card-img">
-                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-3.png'?>" class="seminar-card-image" alt="image" />
+                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-3.png' ?>"
+                                        class="seminar-card-image" alt="image" />
                                     <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg'?>" alt="image" class="arrow-icon" />
+                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
+                                            alt="image" class="arrow-icon" />
                                     </div>
                                 </div>
 
@@ -285,9 +295,11 @@ get_header();
                         <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 mb-4 px-2">
                             <div class="card-wrapper">
                                 <div class="card-img">
-                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-4.png'?>" class="seminar-card-image" alt="image" />
+                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-4.png' ?>"
+                                        class="seminar-card-image" alt="image" />
                                     <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg'?>" alt="image" class="arrow-icon" />
+                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
+                                            alt="image" class="arrow-icon" />
                                     </div>
                                 </div>
 
@@ -309,7 +321,7 @@ get_header();
         </div>
     </section>
 
-    <?php get_template_part('template-parts/sections/partner-section'); ?>
+    <?php get_template_part('template-parts/sections/partners-section'); ?>
 
     <!-- <section class="partner-section-wrapper">
         <div class="container">
@@ -322,22 +334,22 @@ get_header();
                     <div class="row m-0">
                         <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 my-2">
                             <div class="partner-card-img">
-                                <img src="<?= get_template_directory_uri() . './assets/images/partners/apexbank.jpg'?>" alt="image" />
+                                <img src="<?= get_template_directory_uri() . './assets/images/partners/apexbank.jpg' ?>" alt="image" />
                             </div>
                         </div>
                         <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 my-2">
                             <div class="partner-card-img">
-                                <img src="<?= get_template_directory_uri() . './assets/images/partners/AVO BANK.png'?>" alt="image" />
+                                <img src="<?= get_template_directory_uri() . './assets/images/partners/AVO BANK.png' ?>" alt="image" />
                             </div>
                         </div>
                         <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 my-2">
                             <div class="partner-card-img">
-                                <img src="<?= get_template_directory_uri() . './assets/images/partners/biznes rivojlantirish banki.png'?>" alt="image" />
+                                <img src="<?= get_template_directory_uri() . './assets/images/partners/biznes rivojlantirish banki.png' ?>" alt="image" />
                             </div>
                         </div>
                         <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 my-2">
                             <div class="partner-card-img">
-                                <img src="<?= get_template_directory_uri() . './assets/images/partners/HUdudgaz.png'?>" alt="image" />
+                                <img src="<?= get_template_directory_uri() . './assets/images/partners/HUdudgaz.png' ?>" alt="image" />
                             </div>
                         </div>
                     </div>
