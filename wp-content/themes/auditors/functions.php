@@ -253,6 +253,17 @@ if (function_exists('acf_add_options_page')) {
 // ------------------------------------------------------------------------
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
+		'page_title' => 'Оставить заявку',
+		'menu_title' => 'Оставить заявку',
+		'menu_slug' => 'request-settings',
+		'capability' => 'edit_posts',
+		'redirect' => false,
+		'icon_url' => 'dashicons-email'
+	));
+}
+// ------------------------------------------------------------------------
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
 		'page_title' => 'Модальная окна',
 		'menu_title' => 'Модальная окна',
 		'menu_slug' => 'modal-settings',
