@@ -222,11 +222,12 @@ function add_menu_list_class($classes, $item, $args)
 }
 add_filter('nav_menu_css_class', 'add_menu_list_class', 10, 3);
 // ------------------------------------------------------------------------
-function auditors_active_class($classes, $item) {
-    if (in_array('current-menu-item', $classes)) {
-        $classes[] = 'active'; // добавляем свой класс
-    }
-    return $classes;
+function auditors_active_class($classes, $item)
+{
+	if (in_array('current-menu-item', $classes)) {
+		$classes[] = 'active'; // добавляем свой класс
+	}
+	return $classes;
 }
 add_filter('nav_menu_css_class', 'auditors_active_class', 10, 2);
 // ------------------------------------------------------------------------
@@ -235,6 +236,16 @@ if (function_exists('acf_add_options_page')) {
 		'page_title' => 'Партнеры',
 		'menu_title' => 'Партнеры',
 		'menu_slug' => 'partner-settings',
+		'capability' => 'edit_posts',
+		'redirect' => false,
+	));
+}
+// ------------------------------------------------------------------------
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
+		'page_title' => 'Настройка шапки',
+		'menu_title' => 'Настройка шапки',
+		'menu_slug' => 'header-settings',
 		'capability' => 'edit_posts',
 		'redirect' => false,
 	));

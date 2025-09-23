@@ -27,9 +27,13 @@
 		<div class="container">
 			<div class="header-wrapper">
 				<div class="logo-wrapper">
-					<a href="/index.html"><img src="<?= get_template_directory_uri() . '/assets/images/logo.svg' ?>"
-							alt="logo" /></a>
-					<p>Коллегия аудиторов</p>
+					<?php
+					$logo = get_field('header_logo', 'option');
+					?>
+					<a href="<?= esc_url(home_url('/')); ?>">
+						<img src="<?= esc_url($logo['url']); ?>" alt="<?= esc_attr($logo['alt']); ?>" />
+					</a>
+					<!-- <p>Коллегия аудиторов</p> -->
 				</div>
 
 				<nav class="navbar-menu-wrapper" id="nav-menu">
@@ -43,56 +47,39 @@
 						?>
 				</nav>
 
-				<!-- <nav>
-					<div class="navbar-menu-wrapper" id="nav-menu">
-						<ul class="navbar-menu-list">
-							<li class="navbar-menu-item">
-								<a href="#" class="active">Главная</a>
-							</li>
-							<li class="navbar-menu-item">
-								<a href="./assets/pages/about-collegue.html">О коллеги</a>
-							</li>
-							<li class="navbar-menu-item">
-								<a href="./assets/pages/membership.html">Членство</a>
-							</li>
-							<li class="navbar-menu-item">
-								<a href="./assets/pages/become-a-member.html">Стать аудитором</a>
-							</li>
-							<li class="navbar-menu-item">
-								<a href="./assets/pages/devolopment.html">Развитие</a>
-							</li>
-							<li class="navbar-menu-item">
-								<a href="./assets/pages/standards.html">Стандарты</a>
-							</li>
-							<li class="navbar-menu-item">
-								<a href="./assets/pages/supervision.html">Надзор</a>
-							</li>
-							<li class="navbar-menu-item">
-								<a href="./assets/pages/news.html">Новости</a>
-							</li>
-							<li class="navbar-menu-item">
-								<a href="./assets/pages/contacts.html">Контакты</a>
-							</li>
-						</ul>
-					</div>
-				</nav> -->
-
 				<div class="langugage-container">
 					<div class="language-wrapper">
 						<div class="dropdown">
-							<a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-								aria-expanded="false">
-								Рус
-							</a>
+							<?php
+							$languages = pll_the_languages(array(
+								'hide_if_empty' => 0,
+								'raw' => 1
+							));
 
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">En</a></li>
-								<li><a class="dropdown-item" href="#">Uz</a></li>
-							</ul>
+							if ($languages) {
+								$current_lang = pll_current_language();
+								?>
+								<a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+									aria-expanded="false">
+									<?= esc_html($languages[$current_lang]['name']); ?>
+								</a>
+
+								<ul class="dropdown-menu">
+									<?php foreach ($languages as $slug => $lang_item): ?>
+										<?php if ($slug !== $current_lang): ?>
+											<li>
+												<a class="dropdown-item" href="<?= esc_url($lang_item['url']); ?>">
+													<?= esc_html($lang_item['name']); ?>
+												</a>
+											</li>
+										<?php endif; ?>
+									<?php endforeach; ?>
+								</ul>
+							<?php } ?>
 						</div>
 					</div>
 
-					<button class="btn show-btn" id="show-btn">Подать заявку</button>
+					<button class="btn show-btn" id="show-btn"><?= the_field('header_btn_text', 'option'); ?></button>
 					<!-- Бургер -->
 					<button class="burger" id="burger-btn" aria-label="Открыть меню">
 						<span></span>

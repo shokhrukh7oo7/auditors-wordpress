@@ -124,10 +124,10 @@ p {
   inset: 0;
 }
 
-.header-wrapper .logo-wrapper img {
+/* .header-wrapper .logo-wrapper img {
   width: 35px;
   height: 35px;
-}
+} */
 .header-wrapper .logo-wrapper p {
   width: 100px;
   font-size: clamp(14px, 1vw, 15px);
@@ -154,7 +154,9 @@ p {
 .header-wrapper .navbar-menu-wrapper .navbar-menu-list li.current-menu-item > a {
   font-weight: 500;
 }
-
+.language-wrapper .dropdown-toggle:focus {
+  outline: none;
+} 
 .header-wrapper .langugage-container {
   display: flex;
   align-items: center;
