@@ -8,7 +8,7 @@
  *
  * @package auditors
  */
-
+$lang = pll_current_language();
 ?>
 
 <footer>
@@ -195,7 +195,7 @@
 
 <div class="request-modal hidden" id="request-modal">
 	<div class="modal-header">
-		<h3>Подать заявку</h3>
+		<h3><?= get_field('modal_header_' . $lang, 'option'); ?></h3>
 		<button class="btn close-btn" id="close-btn">
 			<img src="<?= get_template_directory_uri() . './assets/images/x.svg' ?>" alt="image" />
 		</button>
@@ -204,26 +204,26 @@
 		<div class="form-wrapper">
 			<div class="form-list">
 				<div class="form-item">
-					<p>Фамилия</p>
+					<p><?= get_field('modal_surname_' . $lang, 'option'); ?></p>
 					<input type="text" name="lastName" class="form-control" />
 				</div>
 				<div class="form-item">
-					<p>Имя</p>
+					<p><?= get_field('modal_name_' . $lang, 'option'); ?></p>
 					<input type="text" name="firstName" class="form-control" />
 				</div>
 			</div>
 			<div class="form-list">
 				<div class="form-item">
-					<p>Эл.почта</p>
+					<p><?= get_field('modal_email_' . $lang, 'option'); ?></p>
 					<input type="email" name="email" class="form-control" />
 				</div>
 				<div class="form-item">
-					<p>Номер телефона</p>
+					<p><?= get_field('modal_phone_number_' . $lang, 'option'); ?></p>
 					<input type="tel" name="tel" class="form-control" />
 				</div>
 			</div>
 			<div class="form-item">
-				<p>Выберите тему</p>
+				<p><?= get_field('modal_select_' . $lang, 'option'); ?></p>
 				<select class="form-select" aria-label="Default select example">
 					<option selected>Выбрать из списка</option>
 					<option value="1">One</option>
@@ -232,17 +232,18 @@
 				</select>
 			</div>
 			<div class="form-item">
-				<p>Сообщение</p>
-				<textarea class="form-control" placeholder="Оставьте комментарий..."></textarea>
+				<p><?= get_field('modal_message_' . $lang, 'option'); ?></p>
+				<textarea class="form-control"
+					placeholder="<?= get_field('modal_message_placeholder_' . $lang, 'option'); ?>"></textarea>
 			</div>
 			<div class="form-check">
 				<input class="form-check-input" type="checkbox" value="" id="checkDefault" />
 				<label class="form-check-label" for="checkDefault">
-					Я принимаю Публичную оферту и Политику конфиденциальности
+					<?= get_field('modal_offer_' . $lang, 'option'); ?>
 				</label>
 			</div>
 		</div>
-		<button class="btn send-btn" id="send-btn">Отправить</button>
+		<button class="btn send-btn" id="send-btn"><?= get_field('modal_btn_text_' . $lang, 'option'); ?></button>
 	</form>
 </div>
 <div class="overlay hidden" id="overlay"></div>
