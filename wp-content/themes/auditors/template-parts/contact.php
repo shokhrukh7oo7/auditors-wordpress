@@ -11,10 +11,48 @@ get_header();
             <div class="contact-container">
                 <div class="contact-wrapper">
                     <div class="contact-content">
-                        <h6>Свяжитесь с нами</h6>
-                        <h1>Контакты</h1>
-                        <p>Оставьте заявку и наши менеджеры свяжутся с вами</p>
-                        <ul>
+                        <h6><?= the_field('contact_top_text'); ?></h6>
+                        <h1><?= the_field('contact_header'); ?></h1>
+                        <p><?= the_field('contact_bottom_text'); ?></p>
+                        <?php if (have_rows('contacts')): ?>
+                            <ul>
+                                <?php while (have_rows('contacts')):
+                                    the_row();
+                                    $icon = get_sub_field('icon');
+                                    $type = get_sub_field('type');
+                                    $value = get_sub_field('value');
+                                    ?>
+                                    <li>
+                                        <?php if ($icon): ?>
+                                            <img src="<?= esc_url($icon['url']); ?>" alt="<?= esc_attr($value); ?>" />
+                                        <?php endif; ?>
+
+                                        <?php if ($type === 'email'): ?>
+                                            <a href="mailto:<?= esc_attr($value); ?>"><?= esc_html($value); ?></a>
+
+                                        <?php elseif ($type === 'phone'): ?>
+                                            <?php if (have_rows('extra_phones')): ?>
+                                                <?php while (have_rows('extra_phones')):
+                                                    the_row();
+                                                    $phone = get_sub_field('phone_number'); ?>
+                                                    <a href="tel:<?= esc_attr($phone); ?>"><?= esc_html($phone); ?></a>
+                                                <?php endwhile; ?>
+                                            <?php else: ?>
+                                                <a href="tel:<?= esc_attr($value); ?>"><?= esc_html($value); ?></a>
+                                            <?php endif; ?>
+
+                                        <?php elseif ($type === 'address'): ?>
+                                            <p><?= esc_html($value); ?></p>
+
+                                        <?php else: ?>
+                                            <span><?= esc_html($value); ?></span>
+                                        <?php endif; ?>
+                                    </li>
+                                <?php endwhile; ?>
+                            </ul>
+                        <?php endif; ?>
+
+                        <!-- <ul>
                             <li>
                                 <img src="<?= get_template_directory_uri() . '/assets/images/Email.svg' ?>"
                                     alt="image" />
@@ -31,35 +69,35 @@ get_header();
                                 <img src="<?= get_template_directory_uri() . '/assets/images/Pin.svg' ?>" alt="image" />
                                 <p>г.Алматы, ул.Ауэзова, 175, 4 этаж, кабинет 1</p>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
 
                     <div class="contact-form">
                         <form>
                             <div class="form-item-wrapper">
                                 <div class="form-item">
-                                    <p>Фамилия</p>
+                                    <p><?= the_field('surname'); ?></p>
                                     <input type="text" class="form-control" />
                                 </div>
                                 <div class="form-item">
-                                    <p>Имя</p>
+                                    <p><?= the_field('name'); ?></p>
                                     <input type="text" class="form-control" />
                                 </div>
                             </div>
 
                             <div class="form-item-wrapper">
                                 <div class="form-item">
-                                    <p>Эл.почта</p>
+                                    <p><?= the_field('email'); ?></p>
                                     <input type="email" class="form-control" />
                                 </div>
                                 <div class="form-item">
-                                    <p>Номер телефона</p>
+                                    <p><?= the_field('phone_number'); ?></p>
                                     <input type="tel" class="form-control" />
                                 </div>
                             </div>
 
                             <div class="form-item-wrapper-two">
-                                <p>Выберите тему</p>
+                                <p><?= the_field('choose_theme'); ?></p>
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Выбрать из списка</option>
                                     <option value="1">One</option>
@@ -69,7 +107,7 @@ get_header();
                             </div>
 
                             <div class="form-item-wrapper-three">
-                                <p>Сообщение</p>
+                                <p><?= the_field('message'); ?></p>
                                 <textarea class="form-control" rows="6"></textarea>
                             </div>
 
@@ -77,14 +115,14 @@ get_header();
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="checkIndeterminate" />
                                     <label class="form-check-label" for="checkIndeterminate">
-                                        Я принимаю Публичную оферту и Политику конфиденциальности
+                                        <?= the_field('offer'); ?>
                                     </label>
                                 </div>
                             </div>
 
                             <div class="contact-btn-wrapper">
                                 <button type="submit" class="btn contact-btn">
-                                    Отправить
+                                    <?= the_field('btn_text'); ?>
                                 </button>
                             </div>
                         </form>
