@@ -130,9 +130,8 @@ get_header();
                 </div>
 
                 <div class="contact-map-wrapper">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.293671119465!2d69.23712462222197!3d41.30247455466229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8ba2102fa8bd%3A0xd7a334a42d5cffcd!2z0KHQvtGO0Lcg0J_QuNGB0LDRgtC10LvQtdC5!5e0!3m2!1sru!2s!4v1732011600720!5m2!1sru!2s"
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="<?= the_field('map_url'); ?>" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
