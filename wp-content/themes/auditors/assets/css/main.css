@@ -680,9 +680,27 @@ p {
   line-height: 140%;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+}
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: clamp(20px, 2.5vw, 30px);
+}
+
+.pagination-wrapper .page-numbers {
+  padding: 8px 17px;
+  border-radius: 8px;
+  background-color: var(--text-color-white);
+}
+
+.pagination-wrapper .current {
+  color: var(--text-color-white);
+  background-color: var(--blue-color);
 }
 
 .seminar-card-wrapper .card-wrapper .card-content .card-btn {

@@ -241,6 +241,34 @@ if (function_exists('acf_add_options_page')) {
 	));
 }
 // ------------------------------------------------------------------------
+// Раздел Развитие
+
+function register_development_post_type()
+{
+	register_post_type('development', array(
+		'labels' => array(
+			'name' => 'Развитие',
+			'singular_name' => 'Мероприятие',
+			'add_new' => 'Добавить мероприятие',
+			'add_new_item' => 'Добавить новое',
+			'edit_item' => 'Редактировать',
+			'new_item' => 'Новое мероприятие',
+			'view_item' => 'Просмотр мероприятия',
+			'search_items' => 'Поиск',
+			'not_found' => 'Не найдено',
+		),
+		'public' => true,
+		'menu_icon' => 'dashicons-welcome-learn-more',
+		'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'development'),
+	));
+}
+add_action('init', 'register_development_post_type');
+// ------------------------------------------------------------------------
+// Раздел новостей
+
+// ------------------------------------------------------------------------
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
 		'page_title' => 'Настройка шапки',
