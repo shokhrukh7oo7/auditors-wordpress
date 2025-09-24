@@ -155,10 +155,12 @@ get_header();
                 <div class="events-section">
                     <h2 class="events-title">Новости</h2>
                     <div class="calendar-wrapper">
-                        <a href="#">
-                            <img src="<?= get_template_directory_uri() . './assets/images/newspaper.svg' ?>"
-                                alt="image" />
-                            Все новости
+                        <a href="<?= get_permalink(35); ?>">
+                            <?php
+                            $news_image = get_field('news_btn_image');
+                            ?>
+                            <img src="<?= esc_url($news_image['url']); ?>" alt="<?= esc_attr($news_image['alt']); ?>" />
+                            <?= the_field('news_btn_text'); ?>
                         </a>
                     </div>
                 </div>

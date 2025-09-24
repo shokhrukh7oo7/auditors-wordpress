@@ -267,7 +267,28 @@ function register_development_post_type()
 add_action('init', 'register_development_post_type');
 // ------------------------------------------------------------------------
 // Раздел новостей
-
+function register_news_post_type()
+{
+	register_post_type('news', [
+		'labels' => [
+			'name' => 'Новости',
+			'singular_name' => 'Новость',
+			'add_new' => 'Добавить новость',
+			'add_new_item' => 'Добавить новую новость',
+			'edit_item' => 'Редактировать новость',
+			'new_item' => 'Новая новость',
+			'view_item' => 'Посмотреть новости',
+			'search_items' => 'Искать новости',
+			'not_found' => 'Новостей не найдено',
+		],
+		'public' => true,
+		'menu_icon' => 'dashicons-megaphone',
+		'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+		'has_archive' => true,
+		'rewrite' => ['slug' => 'news'],
+	]);
+}
+add_action('init', 'register_news_post_type');
 // ------------------------------------------------------------------------
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
