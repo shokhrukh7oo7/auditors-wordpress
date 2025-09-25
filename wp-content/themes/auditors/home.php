@@ -153,112 +153,56 @@ get_header();
         <div class="container">
             <div class="news-wrapper">
                 <div class="events-section">
-                    <h2 class="events-title">Новости</h2>
+                    <h2 class="events-title"><?= the_field('news_header'); ?></h2>
                     <div class="calendar-wrapper">
                         <a href="<?= get_permalink(35); ?>">
                             <?php
                             $news_image = get_field('news_btn_image');
                             ?>
                             <img src="<?= esc_url($news_image['url']); ?>" alt="<?= esc_attr($news_image['alt']); ?>" />
-                            <?= the_field('news_btn_text'); ?>
+                            <?= the_field('all_news_btn_text'); ?>
                         </a>
                     </div>
                 </div>
 
                 <div class="news-card-wrapper">
                     <div class="row m-0">
-                        <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 mb-4 px-2">
-                            <div class="card-wrapper">
-                                <div class="card-img">
-                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-1.png' ?>"
-                                        class="seminar-card-image" alt="image" />
-                                    <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
-                                            alt="image" class="arrow-icon" />
+                        <?php
+                        $news = new WP_Query([
+                            'post_type' => 'news',
+                            'posts_per_page' => 4,
+                            'orderby' => 'date',
+                            'order' => 'DESC',
+                        ]);
+
+                        if ($news->have_posts()):
+                            while ($news->have_posts()):
+                                $news->the_post(); ?>
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 px-2">
+                                    <div class="card-wrapper">
+                                        <div class="card-img">
+                                            <?php the_post_thumbnail('medium', ['class' => 'seminar-card-image']); ?>
+                                            <div class="arrow-icon-wrapper">
+                                                <?php
+                                                $news_icon = get_field('news_icon');
+                                                ?>
+                                                <img src="<?= esc_url($news_icon['url']); ?>"
+                                                    alt="<?= esc_attr($news_icon['alt']); ?>" class="arrow-icon" />
+                                            </div>
+                                        </div>
+                                        <div class="card-content">
+                                            <p class="card-date"><?= get_the_date('j F Y'); ?></p>
+                                            <h4 class="card-header"><?php the_title(); ?></h4>
+                                            <p class="card-description"><?= get_the_excerpt(); ?></p>
+                                            <a href="<?php the_permalink(); ?>"
+                                                class="btn card-btn"><?= the_field('news_btn_text'); ?></a>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="card-content">
-                                    <p class="card-date">20 октября в 10:00</p>
-                                    <h4 class="card-header">
-                                        Семинар по налоговым стратегиям
-                                    </h4>
-                                    <p class="card-description">
-                                        Ежегодная конференция аудиторов 2025 для членов коллеги
-                                    </p>
-                                    <a href="#" class="btn card-btn">Читать подробнее »</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 mb-4 px-2">
-                            <div class="card-wrapper">
-                                <div class="card-img">
-                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-2.png' ?>"
-                                        class="seminar-card-image" alt="image" />
-                                    <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
-                                            alt="image" class="arrow-icon" />
-                                    </div>
-                                </div>
-
-                                <div class="card-content">
-                                    <p class="card-date">15 октября в 10:00</p>
-                                    <h4 class="card-header">
-                                        Воркшоп по финансовому анализу
-                                    </h4>
-                                    <p class="card-description">
-                                        Ежегодная конференция аудиторов 2025 для членов коллеги
-                                    </p>
-                                    <a href="#" class="btn card-btn">Читать подробнее »</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 mb-4 px-2">
-                            <div class="card-wrapper">
-                                <div class="card-img">
-                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-3.png' ?>"
-                                        class="seminar-card-image" alt="image" />
-                                    <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
-                                            alt="image" class="arrow-icon" />
-                                    </div>
-                                </div>
-
-                                <div class="card-content">
-                                    <p class="card-date">25 октября в 10:00</p>
-                                    <h4 class="card-header">
-                                        Круглый стол по внутреннему контролю
-                                    </h4>
-                                    <p class="card-description">
-                                        Ежегодная конференция аудиторов 2025 для членов коллеги
-                                    </p>
-                                    <a href="#" class="btn card-btn">Читать подробнее »</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-md-4 col-lg-3 mb-4 px-2">
-                            <div class="card-wrapper">
-                                <div class="card-img">
-                                    <img src="<?= get_template_directory_uri() . './assets/images/news/news-4.png' ?>"
-                                        class="seminar-card-image" alt="image" />
-                                    <div class="arrow-icon-wrapper">
-                                        <img src="<?= get_template_directory_uri() . './assets/images/seminar/arrow.svg' ?>"
-                                            alt="image" class="arrow-icon" />
-                                    </div>
-                                </div>
-
-                                <div class="card-content">
-                                    <p class="card-date">12 октября в 10:00</p>
-                                    <h4 class="card-header">
-                                        Ежегодная конференция аудиторов 2025
-                                    </h4>
-                                    <p class="card-description">
-                                        Ежегодная конференция аудиторов 2025 для членов коллеги
-                                    </p>
-                                    <a href="#" class="btn card-btn">Читать подробнее »</a>
-                                </div>
-                            </div>
-                        </div>
+                            <?php endwhile;
+                            wp_reset_postdata();
+                        endif;
+                        ?>
                     </div>
                 </div>
             </div>
