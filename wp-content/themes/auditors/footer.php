@@ -181,8 +181,8 @@ $lang = pll_current_language();
 					<p id="teamModalRole"></p>
 					<p id="teamModalInfo"></p>
 					<p class="contact-info">
-						<strong>Телефон:</strong> <a id="teamModalPhone" href=""></a><br />
-						<strong>Эл. почта:</strong> <a id="teamModalEmail" href=""></a>
+						<strong><?php echo pll__('Телефон:');?></strong> <a id="teamModalPhone" href=""></a><br />
+						<strong><?php echo pll__('Эл. почта:'); ?></strong> <a id="teamModalEmail" href=""></a>
 					</p>
 				</div>
 			</div>

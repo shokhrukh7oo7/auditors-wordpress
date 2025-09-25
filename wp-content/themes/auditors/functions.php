@@ -191,6 +191,9 @@ function register_course_strings_for_polylang()
 	if (function_exists('pll_register_string')) {
 		pll_register_string('partners', 'Наши партнеры', 'partners');
 		pll_register_string('news', 'Последние новости', 'news');
+		pll_register_string('team', 'Все', 'all');
+		pll_register_string('phone', 'Телефон', 'phone');
+		pll_register_string('email', 'Эл.почта', 'email');
 	}
 }
 add_action('init', 'register_course_strings_for_polylang');
@@ -290,6 +293,42 @@ function register_news_post_type()
 	]);
 }
 add_action('init', 'register_news_post_type');
+// ------------------------------------------------------------------------
+// functions.php
+function register_team_cpt()
+{
+	register_post_type('team', [
+		'labels' => [
+			'name' => 'Сотрудники',
+			'singular_name' => 'Сотрудник',
+			'add_new' => 'Добавить сотрудника',
+			'add_new_item' => 'Добавить нового сотрудника',
+			'edit_item' => 'Редактировать сотрудника',
+			'new_item' => 'Новый сотрудник',
+			'view_item' => 'Просмотр сотрудника',
+			'search_items' => 'Найти сотрудника',
+			'not_found' => 'Сотрудники не найдены',
+			'menu_name' => 'Сотрудники',
+		],
+		'public' => true,
+		'menu_icon' => 'dashicons-groups',
+		'supports' => ['title', 'editor', 'thumbnail'],
+		'has_archive' => false,
+		'rewrite' => ['slug' => 'team'],
+	]);
+
+	// Таксономия (категории сотрудников: admin, management, committee)
+	register_taxonomy('team_category', 'team', [
+		'labels' => [
+			'name' => 'Категории сотрудников',
+			'singular_name' => 'Категория сотрудника',
+		],
+		'public' => true,
+		'hierarchical' => true,
+		'rewrite' => ['slug' => 'team-category'],
+	]);
+}
+add_action('init', 'register_team_cpt');
 // ------------------------------------------------------------------------
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
