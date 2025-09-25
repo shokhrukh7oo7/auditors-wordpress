@@ -190,6 +190,7 @@ function register_course_strings_for_polylang()
 {
 	if (function_exists('pll_register_string')) {
 		pll_register_string('partners', 'Наши партнеры', 'partners');
+		pll_register_string('news', 'Последние новости', 'news');
 	}
 }
 add_action('init', 'register_course_strings_for_polylang');

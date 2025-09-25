@@ -5,15 +5,11 @@ get_header();
 <main>
     <section class="bg zero-padding">
         <div class="news-image-banner">
-            <!-- <img src="/assets/images/banner/news-banner.png" alt="image" /> -->
             <?php the_post_thumbnail('full'); ?>
         </div>
         <div class="container">
             <div class="news-detail-content-wrapper">
                 <div class="news-nav">
-                    <!-- <a href="/index.html">Главная /</a> -->
-                    <!-- <a href="/assets/pages/news.html">Новости /</a> -->
-                    <!-- <a href="#" class="news-active">Ежегодная конференция аудиторов 2025</a> -->
                     <?php
                     if (function_exists('yoast_breadcrumb')) {
                         yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
@@ -37,7 +33,7 @@ get_header();
         <div class="container">
             <div class="seminar-wrapper development">
                 <div class="events-section">
-                    <h2 class="events-title-news-detail">Последние новости</h2>
+                    <h2 class="events-title-news-detail"><?php echo pll__('Последние новости'); ?></h2>
                 </div>
                 <div class="seminar-card-wrapper">
                     <div class="row m-0">
