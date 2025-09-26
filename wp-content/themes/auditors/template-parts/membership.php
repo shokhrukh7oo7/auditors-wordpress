@@ -210,6 +210,7 @@ get_header();
                     </table>
                 </div>
 
+                <!-- 📋 Таблица Аудиторы -->
                 <div class="table_component hidden" id="auditors-table" role="region" tabindex="0">
                     <table>
                         <thead>
