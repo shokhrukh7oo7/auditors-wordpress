@@ -31,6 +31,9 @@
 }
 
 @media (max-width: 992px) {
+  .table_component table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 0;
+  }
   .burger {
     display: flex;
   }

@@ -330,6 +330,57 @@ function register_team_cpt()
 }
 add_action('init', 'register_team_cpt');
 // ------------------------------------------------------------------------
+function register_audit_cpts() {
+    // 🔹 CPT: Аудиторские компании
+    register_post_type('audit_company', [
+        'labels' => [
+            'name' => 'Аудиторские компании',
+            'singular_name' => 'Компания',
+            'add_new' => 'Добавить компанию',
+            'add_new_item' => 'Добавить новую компанию',
+            'edit_item' => 'Редактировать компанию',
+            'new_item' => 'Новая компания',
+            'view_item' => 'Просмотреть компанию',
+            'search_items' => 'Найти компанию',
+            'not_found' => 'Не найдено',
+        ],
+        'public' => true,
+        'menu_icon' => 'dashicons-building',
+        'supports' => ['title'],
+        'has_archive' => false,
+    ]);
+
+    // 🔹 CPT: Аудиторы
+    register_post_type('auditor', [
+        'labels' => [
+            'name' => 'Аудиторы',
+            'singular_name' => 'Аудитор',
+            'add_new' => 'Добавить аудитора',
+            'add_new_item' => 'Добавить нового аудитора',
+            'edit_item' => 'Редактировать аудитора',
+            'new_item' => 'Новый аудитор',
+            'view_item' => 'Просмотреть аудитора',
+            'search_items' => 'Найти аудитора',
+            'not_found' => 'Не найдено',
+        ],
+        'public' => true,
+        'menu_icon' => 'dashicons-groups',
+        'supports' => ['title'],
+        'has_archive' => false,
+    ]);
+
+    register_taxonomy('city', ['audit_company', 'auditor'], [
+        'labels' => [
+            'name' => 'Города',
+            'singular_name' => 'Город',
+        ],
+        'public' => true,
+        'hierarchical' => false,
+    ]);
+}
+add_action('init', 'register_audit_cpts');
+
+// ------------------------------------------------------------------------
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
 		'page_title' => 'Настройка шапки',

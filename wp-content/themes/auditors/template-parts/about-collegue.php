@@ -79,7 +79,7 @@ get_header();
             <div class="tabs-wrapper">
                 <!-- Табы -->
                 <div class="tabs">
-                    <button class="tab active" data-filter="all"><?php echo pll__('Все');?></button>
+                    <button class="tab active" data-filter="all"><?php echo pll__('Все'); ?></button>
                     <?php
                     $terms = get_terms([
                         'taxonomy' => 'team_category',
@@ -129,87 +129,6 @@ get_header();
             </div>
         </div>
     </section>
-
-
-    <!-- <section class="tab-container">
-        <div class="container">
-            <div class="tabs-wrapper">
-                <div class="tabs">
-                    <button class="tab active" data-filter="all">Все</button>
-                    <button class="tab" data-filter="management">Правление</button>
-                    <button class="tab" data-filter="admin">Администрация</button>
-                    <button class="tab" data-filter="committee">
-                        Профильные комитеты
-                    </button>
-                </div>
-
-                <div class="cards">
-                    <div class="card" data-category="management" data-name="Кайрат Султанов" data-role="Директор"
-                        data-img="<?= get_template_directory_uri() . '/assets/images/tabs/tab-1.png' ?>" data-info="Кайрат Султанов — опытный директор с богатым
-                  опытом в управлении. Он получил высшее образование в Казахском
-                  национальном университете, где изучал экономику и управление.
-                  После окончания университета Кайрат начал свою карьеру в
-                  крупной компании, где быстро поднялся по карьерной лестнице
-                  благодаря своим лидерским качествам и стратегическому
-                  мышлению. В течение нескольких лет он работал в различных
-                  отраслях, включая финансы и технологии, прежде чем занять
-                  должность директора в своей текущей компании. Кайрат активно
-                  участвует в общественной жизни и стремится внедрять инновации
-                  в своей области." data-phone="+71231231234" data-email="k.sultanov@auditor.kz">
-                        <img src="<?= get_template_directory_uri() . '/assets/images/tabs/tab-1.png' ?>" alt="" />
-                        <h3>Кайрат Султанов</h3>
-                        <p>Директор</p>
-                        <p class="card-info">
-                            Московский государственный университет. 25 лет стажа в сфере
-                            управления.
-                        </p>
-                    </div>
-
-                    <div class="card" data-category="committee" data-name="Айгул Сабирова" data-role="Маркетолог"
-                        data-img="<?= get_template_directory_uri() . '/assets/images/tabs/tab-3.png' ?>" data-info="Айгул Сабирова — опытный директор с богатым
-                  опытом в управлении. Она получила высшее образование в Казахском
-                  национальном университете, где изучала экономику и управление.
-                  После окончания университета Айгул начала свою карьеру в
-                  крупной компании, где быстро поднялась по карьерной лестнице
-                  благодаря своим лидерским качествам и стратегическому
-                  мышлению. В течение нескольких лет она работала в различных
-                  отраслях, включая финансы и технологии, прежде чем занять
-                  должность директора в своей текущей компании. Айгул активно
-                  участвует в общественной жизни и стремится внедрять инновации
-                  в своей области." data-phone="+71231231234" data-email="s.aygul@auditor.kz">
-                        <img src="<?= get_template_directory_uri() . '/assets/images/tabs/tab-3.png' ?>" alt="" />
-                        <h3>Айгул Сабирова</h3>
-                        <p>Маркетолог</p>
-                        <p class="card-info">
-                            Московский государственный университет. 25 лет стажа в сфере
-                            управления.
-                        </p>
-                    </div>
-
-                    <div class="card" data-category="admin" data-name="Бекзат Ибраев" data-role="Менеджер"
-                        data-img="<?= get_template_directory_uri() . '/assets/images/tabs/tab-5.png' ?>" data-info="Бекзат Ибраев — опытный директор с богатым
-                  опытом в управлении. Он получил высшее образование в Казахском
-                  национальном университете, где изучал экономику и управление.
-                  После окончания университета Бекзат начал свою карьеру в
-                  крупной компании, где быстро поднялся по карьерной лестнице
-                  благодаря своим лидерским качествам и стратегическому
-                  мышлению. В течение нескольких лет он работал в различных
-                  отраслях, включая финансы и технологии, прежде чем занять
-                  должность директора в своей текущей компании. Бекзат активно
-                  участвует в общественной жизни и стремится внедрять инновации
-                  в своей области." data-phone="+71231231234" data-email="b.ibrayev@auditor.kz">
-                        <img src="<?= get_template_directory_uri() . '/assets/images/tabs/tab-5.png' ?>" alt="" />
-                        <h3>Бекзат Ибраев</h3>
-                        <p>Менеджер</p>
-                        <p class="card-info">
-                            Московский государственный университет. 25 лет стажа в сфере
-                            управления.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <section class="bg-grey">
         <div class="about-collegue-bg-wrapper">
