@@ -168,8 +168,9 @@ get_header();
                 <div class="table-accordion-wrapper">
                     <!-- 🔘 Кнопки переключения -->
                     <div class="button-group">
-                        <button class="toggle-button active" id="btn-companies">Аудиторские компании</button>
-                        <button class="toggle-button " id="btn-auditors">Аудиторы</button>
+                        <button class="toggle-button active"
+                            id="btn-companies"><?php echo pll__('Аудиторские компании'); ?></button>
+                        <button class="toggle-button " id="btn-auditors"><?php echo pll__('Аудиторы'); ?></button>
                     </div>
                 </div>
 
@@ -178,9 +179,9 @@ get_header();
                     <table>
                         <thead>
                             <tr>
-                                <th>Название компании</th>
-                                <th>Телефон</th>
-                                <th>Адрес</th>
+                                <th><?php echo pll__('Название компании'); ?></th>
+                                <th><?php echo pll__('Телефон'); ?></th>
+                                <th><?php echo pll__('Адрес'); ?></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -197,9 +198,9 @@ get_header();
                                     $city = $city_terms ? $city_terms[0]->name : '';
                                     ?>
                                     <tr>
-                                        <td data-label="Название компании"><?php the_title(); ?></td>
-                                        <td data-label="Телефон"><?= esc_html($phone); ?></td>
-                                        <td data-label="Город"><?= esc_html($city); ?></td>
+                                        <td data-label="<?php echo pll__('Название компании'); ?>"><?php the_title(); ?></td>
+                                        <td data-label="<?php echo pll__('Телефон'); ?>"><?= esc_html($phone); ?></td>
+                                        <td data-label="<?php echo pll__('Город'); ?>"><?= esc_html($city); ?></td>
                                     </tr>
                                 <?php endwhile;
                                 wp_reset_postdata();
@@ -213,8 +214,8 @@ get_header();
                     <table>
                         <thead>
                             <tr>
-                                <th>ФИО</th>
-                                <th>Город</th>
+                                <th><?php echo pll__('ФИО'); ?></th>
+                                <th><?php echo pll__('Город'); ?></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -230,8 +231,8 @@ get_header();
                                     $city = $city_terms ? $city_terms[0]->name : '';
                                     ?>
                                     <tr>
-                                        <td data-label="ФИО"><?php the_title(); ?></td>
-                                        <td data-label="Город"><?= esc_html($city); ?></td>
+                                        <td data-label="<?php echo pll__('ФИО'); ?>"><?php the_title(); ?></td>
+                                        <td data-label="<?php echo pll__('Город'); ?>"><?= esc_html($city); ?></td>
                                     </tr>
                                 <?php endwhile;
                                 wp_reset_postdata();

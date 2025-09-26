@@ -194,6 +194,13 @@ function register_course_strings_for_polylang()
 		pll_register_string('team', 'Все', 'all');
 		pll_register_string('phone', 'Телефон', 'phone');
 		pll_register_string('email', 'Эл.почта', 'email');
+		pll_register_string('auditor-company', 'Аудиторские компании', 'auditor-company');
+		pll_register_string('auditors', 'Аудиторы', 'auditors');
+		pll_register_string('company-name', 'Название компании', 'company-name');
+		pll_register_string('telephone', 'Телефон', 'telephone');
+		pll_register_string('address', 'Адрес', 'address');
+		pll_register_string('fullname', 'ФИО', 'fullname');
+		pll_register_string('city', 'Город', 'city');
 	}
 }
 add_action('init', 'register_course_strings_for_polylang');
