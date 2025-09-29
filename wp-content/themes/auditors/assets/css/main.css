@@ -2403,10 +2403,10 @@ footer {
   align-items: end;
   gap: clamp(5px, 0.5vw, 10px);
 }
-.footer-item .footer-logo a img {
+/* .footer-item .footer-logo a img {
   width: 35px;
   height: 35px;
-}
+} */
 
 .footer-item .footer-logo p {
   width: 100px;

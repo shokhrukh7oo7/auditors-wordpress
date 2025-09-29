@@ -17,63 +17,67 @@ $lang = pll_current_language();
 			<div class="col-12 col-sm-6 col-lg-3 col-xl-3 mt-5">
 				<div class="footer-item">
 					<div class="footer-logo">
-						<a href="#">
-							<img src="<?= get_template_directory_uri() . '/assets/images/logo.svg' ?>" alt="image" />
+						<?php
+						$logo = get_field('footer_logo', 'option');
+						?>
+						<a href="<?= esc_url(home_url('/')); ?>">
+							<img src="<?= esc_url($logo['url']); ?>" alt="<?= esc_attr($logo['alt']); ?>" />
 						</a>
-						<p>Коллегия аудиторов</p>
 					</div>
 
 					<ul>
-						<li>
-							<p>
-								<span>Наш адрес:</span>
-								г.Алматы, ул.Ауэзова, 175, 4 этаж, кабинет 1
-							</p>
-						</li>
+						<?php if ($address = get_field('address', 'option')): ?>
+							<li>
+								<p>
+									<span><?= esc_html(get_field('address_label', 'option')); ?></span>
+									<?= esc_html($address); ?>
+								</p>
+							</li>
+						<?php endif; ?>
 
-						<li>
-							<p>
-								<span>Телефон:</span>
-								+7 (727) 123-45-67, +7 (727) 123-45-68
-							</p>
-						</li>
+						<?php if (have_rows('phones', 'option')): ?>
+							<li>
+								<p>
+									<span><?= esc_html(get_field('phone_label', 'option')); ?></span>
+									<?php while (have_rows('phones', 'option')):
+										the_row();
+										$phone = get_sub_field('phone_number', 'option'); ?>
+										<a href="tel:<?= preg_replace('/\D+/', '', $phone); ?>">
+											<?= esc_html($phone); ?>
+										</a><br>
+									<?php endwhile; ?>
+								</p>
+							</li>
+						<?php endif; ?>
 
-						<li>
-							<p>
-								<span>Режим работы:</span>
-								Пн-Пт: 9:00 - 18:00
-							</p>
-						</li>
+						<?php if ($work_time = get_field('work_time', 'option')): ?>
+							<li>
+								<p>
+									<span><?= esc_html(get_field('work_time_label', 'option')); ?></span>
+									<?= esc_html($work_time); ?>
+								</p>
+							</li>
+						<?php endif; ?>
 					</ul>
 
 					<div class="footer-social-wrapper">
-						<h1>Ссылки на социальные сети:</h1>
+						<h1><?= the_field('social_header', 'option'); ?></h1>
 
 						<ul>
-							<li>
-								<a href="">
-									<img src="<?= get_template_directory_uri() . './assets/images/social/instagram.svg' ?>"
-										alt="image" />
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<img src="<?= get_template_directory_uri() . './assets/images/social/youtube.svg' ?>"
-										alt="image" />
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<img src="<?= get_template_directory_uri() . './assets/images/social/telegram.svg' ?>"
-										alt="image" />
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<img src="<?= get_template_directory_uri() . './assets/images/social/linkedin.svg' ?>"
-										alt="image" />
-								</a>
-							</li>
+							<?php if (have_rows('social_links', 'option')): ?>
+								<?php while (have_rows('social_links', 'option')):
+									the_row();
+									$social_link = get_sub_field('url', 'option');
+									$social_icon = get_sub_field('icon', 'option');
+									?>
+									<li>
+										<a href="<?= esc_url($social_link); ?>" target="_blank" rel="noopener">
+											<img src="<?= esc_url($social_icon['url']); ?>"
+												alt="<?= esc_attr($social_icon['alt']); ?>" />
+										</a>
+									</li>
+								<?php endwhile; ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</div>
@@ -181,7 +185,7 @@ $lang = pll_current_language();
 					<p id="teamModalRole"></p>
 					<p id="teamModalInfo"></p>
 					<p class="contact-info">
-						<strong><?php echo pll__('Телефон:');?></strong> <a id="teamModalPhone" href=""></a><br />
+						<strong><?php echo pll__('Телефон:'); ?></strong> <a id="teamModalPhone" href=""></a><br />
 						<strong><?php echo pll__('Эл. почта:'); ?></strong> <a id="teamModalEmail" href=""></a>
 					</p>
 				</div>

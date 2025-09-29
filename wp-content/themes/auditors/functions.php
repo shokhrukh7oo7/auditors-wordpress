@@ -400,6 +400,16 @@ if (function_exists('acf_add_options_page')) {
 // ------------------------------------------------------------------------
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
+		'page_title' => 'Настройка подвала',
+		'menu_title' => 'Настройка подвала',
+		'menu_slug' => 'footer-settings',
+		'capability' => 'edit_posts',
+		'redirect' => false,
+	));
+}
+// ------------------------------------------------------------------------
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
 		'page_title' => 'Оставить заявку',
 		'menu_title' => 'Оставить заявку',
 		'menu_slug' => 'request-settings',
